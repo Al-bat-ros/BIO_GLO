@@ -49,6 +49,46 @@ window.addEventListener('DOMContentLoaded', function(){
     };
     modalTwo();
 
+    // Аккордеон 2 
+    const questions = () => {
+        const accordionTwo = document.getElementById('accordion-two'),
+              collapseOneTwo = document.getElementById('collapseOne-two'),
+              collapseTwoTwo = document.getElementById('collapseTwo-two'),
+              collapseThreeTwo = document.getElementById('collapseThree-two'),
+              headingOneTwo = document.getElementById('headingOne-two').children,
+              headingTwoTwo = document.getElementById('headingTwo-two').children,
+              headingThreeTwo = document.getElementById('headingThree-two').children;
+
+        accordionTwo.addEventListener('click', (event) => {
+            event.preventDefault();
+            let target = event.target;
+            
+            if (target === headingOneTwo[0].children[0]){
+                
+                collapseOneTwo.classList.add('in');
+                collapseTwoTwo.classList.remove('in');
+                collapseThreeTwo.classList.remove('in');
+            
+            }else if (target === headingTwoTwo[0].children[0]){
+
+                collapseTwoTwo.classList.add('in');
+                collapseOneTwo.classList.remove('in');
+                collapseThreeTwo.classList.remove('in');
+
+            }else if (target === headingThreeTwo[0].children[0]){
+
+                collapseThreeTwo.classList.add('in');
+                collapseTwoTwo.classList.remove('in');
+                collapseOneTwo.classList.remove('in');
+                
+            }
+           
+        });
+
+    };
+    questions();
+
+
 
 
 
