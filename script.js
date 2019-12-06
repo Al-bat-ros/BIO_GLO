@@ -88,7 +88,28 @@ window.addEventListener('DOMContentLoaded', function(){
     };
     questions();
 
+    // Скидка
+    const discount = () => {
+        const popupCheck = document.querySelector('.popup-check'),
+              checkBtn = document.querySelector('.check-btn');
+              
+              checkBtn.addEventListener('click', () => {
+                popupCheck.style.display = 'block';
+              }); 
 
+              popupCheck.addEventListener('click', (event) => {
+                let target = event.target;
+                console.log(target);
+                if (target.classList.contains('popup-close')){
+                    popupCheck.style.display = 'none';
+                }else if (target.classList.contains('popup-check')){
+                    popupCheck.style.display = 'none';
+                };
+              });
+    };
+    discount();  
+     
+    
 
 
 
