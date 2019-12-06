@@ -55,27 +55,27 @@ window.addEventListener('DOMContentLoaded', function(){
               collapseOneTwo = document.getElementById('collapseOne-two'),
               collapseTwoTwo = document.getElementById('collapseTwo-two'),
               collapseThreeTwo = document.getElementById('collapseThree-two'),
-              headingOneTwo = document.getElementById('headingOne-two').children,
-              headingTwoTwo = document.getElementById('headingTwo-two').children,
-              headingThreeTwo = document.getElementById('headingThree-two').children;
+              headingOneTwo = document.getElementById('headingOne-two'),
+              headingTwoTwo = document.getElementById('headingTwo-two'),
+              headingThreeTwo = document.getElementById('headingThree-two');
 
         accordionTwo.addEventListener('click', (event) => {
             event.preventDefault();
             let target = event.target;
-            
-            if (target === headingOneTwo[0].children[0]){
+
+            if (target === headingOneTwo || target.parentNode === headingOneTwo.children[0]){
                 
                 collapseOneTwo.classList.add('in');
                 collapseTwoTwo.classList.remove('in');
                 collapseThreeTwo.classList.remove('in');
             
-            }else if (target === headingTwoTwo[0].children[0]){
+            }else if (target === headingTwoTwo || target.parentNode === headingTwoTwo.children[0]){
 
                 collapseTwoTwo.classList.add('in');
                 collapseOneTwo.classList.remove('in');
                 collapseThreeTwo.classList.remove('in');
 
-            }else if (target === headingThreeTwo[0].children[0]){
+            }else if (target === headingThreeTwo  || target.parentNode === headingThreeTwo.children[0]){
 
                 collapseThreeTwo.classList.add('in');
                 collapseTwoTwo.classList.remove('in');
