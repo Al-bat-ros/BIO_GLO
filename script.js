@@ -63,19 +63,19 @@ window.addEventListener('DOMContentLoaded', function(){
             event.preventDefault();
             let target = event.target;
 
-            if (target === headingOneTwo || target.parentNode === headingOneTwo.children[0]){
-                
+            if (target === headingOneTwo || target.parentNode === headingOneTwo.parentNode || target.parentNode === headingOneTwo.children[0] || target.parentNode === headingOneTwo){
+             
                 collapseOneTwo.classList.add('in');
                 collapseTwoTwo.classList.remove('in');
                 collapseThreeTwo.classList.remove('in');
             
-            }else if (target === headingTwoTwo || target.parentNode === headingTwoTwo.children[0]){
+            }else if (target === headingTwoTwo || target.parentNode === headingTwoTwo.parentNode || target.parentNode === headingTwoTwo.children[0] || target.parentNode === headingTwoTwo){
 
                 collapseTwoTwo.classList.add('in');
                 collapseOneTwo.classList.remove('in');
                 collapseThreeTwo.classList.remove('in');
 
-            }else if (target === headingThreeTwo  || target.parentNode === headingThreeTwo.children[0]){
+            }else if (target === headingThreeTwo || target.parentNode === headingThreeTwo.parentNode || target.parentNode === headingThreeTwo.children[0] || target.parentNode === headingThreeTwo){
 
                 collapseThreeTwo.classList.add('in');
                 collapseTwoTwo.classList.remove('in');
@@ -108,7 +108,28 @@ window.addEventListener('DOMContentLoaded', function(){
               });
     };
     discount();  
-     
+
+    // Калькулятор аккордеон
+    // const colcAccordion = () => {
+    //   const panelGroup = document.querySelector('.panel-group'),
+
+    //         panelOne = document.querySelector('.panel-one'),
+    //         panelTwo = document.querySelector('.panel-two'),
+    //         panelThree = document.querySelector('.panel-three'),
+    //         panelFour = document.querySelector('.panel-four');
+
+    //         console.log(panelGroup);
+    //         panelGroup.addEventListener('click', (event) => {
+    //             event.preventDefault();
+    //             let target = event.target;
+    //             console.log(target);
+    //             // if (target === )
+    //         });
+
+            
+
+    // };
+    // colcAccordion();
     
 
 
