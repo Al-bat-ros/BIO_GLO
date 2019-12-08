@@ -110,26 +110,109 @@ window.addEventListener('DOMContentLoaded', function(){
     discount();  
 
     // Калькулятор аккордеон
-    // const colcAccordion = () => {
-    //   const panelGroup = document.querySelector('.panel-group'),
-
-    //         panelOne = document.querySelector('.panel-one'),
-    //         panelTwo = document.querySelector('.panel-two'),
-    //         panelThree = document.querySelector('.panel-three'),
-    //         panelFour = document.querySelector('.panel-four');
-
-    //         console.log(panelGroup);
-    //         panelGroup.addEventListener('click', (event) => {
-    //             event.preventDefault();
-    //             let target = event.target;
-    //             console.log(target);
-    //             // if (target === )
-    //         });
-
+    const colcAccordion = () => {
+      const panelGroup = document.querySelector('.panel-group'),
+            collapseOne = document.getElementById('collapseOne'),
+            collapseTwo = document.getElementById('collapseTwo'),
+            collapseThree = document.getElementById('collapseThree'),
+            collapseFour = document.getElementById('collapseFour'),
+            headingOne = document.getElementById('headingOne'),
+            headingTwo = document.getElementById('headingTwo'),
+            headingThree = document.getElementById('headingThree'),
+            headingFour = document.getElementById('headingFour'),   
+            constructBtn = document.querySelectorAll('.construct-btn'),
+            onoffswitchCheckbox = document.querySelector('.onoffswitch-checkbox');
             
+            panelGroup.addEventListener('click', (event) => {
+               
+                let target = event.target;
+               
+                const headingAction = () => {
+                    if ( target === headingOne || target.parentNode === headingOne.children[0] || target.parentNode === headingOne.children[0].children[0]){
+                        
+                            collapseOne.classList.add('in');
+                            collapseTwo.classList.remove('in');
+                            collapseThree.classList.remove('in');
+                            collapseFour.classList.remove('in');
+                    } else if (target === headingTwo || target.parentNode === headingTwo.children[0] || target.parentNode === headingTwo.children[0].children[0]){
+                        
+                            collapseOne.classList.remove('in');
+                            collapseTwo.classList.add('in');
+                            collapseThree.classList.remove('in');
+                            collapseFour.classList.remove('in');
+                    }else if (target === headingThree || target.parentNode === headingThree.children[0] || target.parentNode === headingThree.children[0].children[0]){
+                        
+                            collapseOne.classList.remove('in');
+                            collapseTwo.classList.remove('in');
+                            collapseThree.classList.add('in');
+                            collapseFour.classList.remove('in');
+                    }else if (target === headingFour || target.parentNode === headingFour.children[0] || target.parentNode === headingFour.children[0].children[0]){
+            
+                            collapseOne.classList.remove('in');
+                            collapseTwo.classList.remove('in');
+                            collapseThree.classList.remove('in');
+                            collapseFour.classList.add('in');
+                    }
+                }
+                headingAction();
 
-    // };
-    // colcAccordion();
+                const switchBox = () => {
+
+                       collapseTwo.children[0].childNodes[7].style.display = 'none';
+                       collapseTwo.children[0].childNodes[9].style.display = 'none';
+                       collapseTwo.children[0].childNodes[11].style.display = 'none';
+
+                    onoffswitchCheckbox.addEventListener('change', () => {
+
+                       if(!onoffswitchCheckbox.checked){
+                        console.log(onoffswitchCheckbox.checked)
+                      
+                        collapseTwo.children[0].childNodes[7].style.display = '';
+                        collapseTwo.children[0].childNodes[9].style.display = '';
+                        collapseTwo.children[0].childNodes[11].style.display = '';
+                       }
+                       if (onoffswitchCheckbox.checked){
+                        console.log(onoffswitchCheckbox.checked);
+                      
+                        collapseTwo.children[0].childNodes[7].style.display = 'none';
+                        collapseTwo.children[0].childNodes[9].style.display = 'none';
+                        collapseTwo.children[0].childNodes[11].style.display = 'none';
+                       }      
+                       
+                    });
+                };
+              switchBox();
+
+
+                const actionBtn = () => {
+                    
+                    constructBtn.forEach((elem, index) => {
+                        elem.classList.add(`construct-btn${index}`);
+                    });
+                    
+                    if (target.classList.contains('construct-btn0') || target === constructBtn[0].children[0]){ 
+                        switchBox();            
+                        collapseTwo.classList.add('in');               
+                    }else if(target.classList.contains('construct-btn1') || target === constructBtn[1].children[0]){                        
+                        collapseThree.classList.add('in');           
+                    }else if(target.classList.contains('construct-btn2') || target === constructBtn[2].children[0]){
+                        collapseFour.classList.add('in');
+                    }
+                };
+                actionBtn();
+
+                const calc = () => {
+
+                };
+                calc();
+
+
+               
+            });
+
+
+    };
+    colcAccordion();
     
 
 
@@ -139,4 +222,5 @@ window.addEventListener('DOMContentLoaded', function(){
 
 
 });
+
 
