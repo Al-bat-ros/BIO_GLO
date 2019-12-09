@@ -311,7 +311,7 @@ window.addEventListener('DOMContentLoaded', function(){
                                   body[key] = val;
                                   });
                                  const obj =  Object.assign(body, this.septic);
-                                  console.log(obj);
+    
                                   postData();
                           });
                     });
